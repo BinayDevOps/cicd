@@ -29,9 +29,22 @@ jobs:
       - name: TERRAFORM SETUP  
         uses: hashicorp/setup-terraform@v4
         
-      - name: TERRAFORM VERSION CHECK  
-        run: terraform -v
-  
+      - name: CHECKOUT REPO
+        uses: actions/checkout@v7
+        
+      - name: TERRAFORM INIT  
+        run: terraform init
+        
+      - name: TERRAFORM VALIDATE 
+        run: terraform validate
+        
+      - name: TERRAFORM PLAN 
+        run: terraform plan
+        
+      - name: TERRAFORM APPLY   
+        run: terraform apply -auto-approve
+    
+     
 
   job1:
     needs: build-and-deploy
