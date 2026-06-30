@@ -8,6 +8,7 @@ permissions:
   contents: read
   
 jobs:
+
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
@@ -33,16 +34,24 @@ jobs:
   
 
   job1:
+    needs: build-and-deploy
     runs-on: ubuntu-latest
     steps:
       - name: ubuntu latest job1
         run: echo "hello this is first step of job1"
+
+              
   job2:
+    needs: job1
     runs-on: macos-latest
     steps:
       - name: macos latest job2
         run: echo "This is macos latest running job2"
   job3:
+    needs:
+      - build-and-deploy 
+      - job1
+      - job2
     runs-on: windows-latest
     steps:
       - name: windows latest job3 
