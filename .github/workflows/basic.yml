@@ -24,6 +24,12 @@ jobs:
           azcliversion: latest
           inlineScript: |
             az group list -o table
+            
+      - name: TERRAFORM SETUP  
+        uses: hashicorp/setup-terraform@v4
+        
+      - name: TERRAFORM VERSION CHECK  
+        run: terraform -v
   
 
   job1:
