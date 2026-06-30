@@ -23,7 +23,7 @@ jobs:
         with:
           azcliversion: latest
           inlineScript: |
-            az account show
+            az group list -o table
   
 
   job1:
