@@ -6,13 +6,16 @@ jobs:
   job1:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "hello this is first step of job1"
+      - name: ubuntu latest job1
+        run: echo "hello this is first step of job1"
   job2:
     runs-on: macos-latest
     steps:
-      - run: echo "This is macos latest running job2"
+      - name: macos latest job2
+        run: echo "This is macos latest running job2"
   job3:
     runs-on: windows-latest
     steps:
-      - run: echo "This is windowsos running job3" 
+      - name: windows latest job3 
+        run: echo "This is windowsos running job3" 
   
