@@ -1,0 +1,18 @@
+name: myfirstyamlfile
+
+on:
+  workflow_dispatch: 
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "hello this is first step of job1"
+  job2:
+    runs-on: macos-latest
+    steps:
+      - run: echo "This is macos latest running job2"
+  job3:
+    runs-on: windows-latest
+    steps:
+      - run: echo "This is windowsos running job3" 
+  
